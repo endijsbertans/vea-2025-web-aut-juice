@@ -28,21 +28,38 @@ describe("Juice-shop scenarios", () => {
 
     it("Registration", () => {
       // Click Account button
+      HomePage.accountButton.click();
       // Login button
+      HomePage.loginButton.click();
       // Click "Not yet a customer?"
+      LoginPage.notYetACustomerButton.click();
       // Find - how to generate random number in JS
+      const rndInt = Math.floor(Math.random() * 9999) + 1000
+      let email = "email_" + rndInt + "@inbox.lv"
       // Use that number to genarate unique email address, e.g.: email_7584@ebox.com
       // Save that email address to some variable
+      LoginPage.emailControl.type(email);
       // Fill in password field and repeat password field with same password
+      LoginPage.passwordControl.type("ENDIJS123123123!");
+      LoginPage.repeatPasswordControl.type("ENDIJS123123123!");
       // Click on Security Question menu
+      LoginPage.securityQuestion.click();
       // Select  "Name of your favorite pet?"
+      LoginPage.favoritePet.click();
       // Fill in answer
+      LoginPage.securityAnswerControl.type("ENDIJS123123123!");
       // Click Register button
+      LoginPage.registerButton.click();
       // Set email value to previously created email
+      LoginPage.emailField.type(email)
       // Set password value to previously used password value
+      LoginPage.passwordField.type("ENDIJS123123123!")
       // Click login button
+      LoginPage.loginButton.click();
       // Click Account button
+      HomePage.accountButton.click()
       // Validate that account name (with previously created email address) appears in the menu section
+      HomePage.userProfileMenuButton.should("contain.text", email);
     });
   });
 
