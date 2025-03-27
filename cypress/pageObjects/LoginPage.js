@@ -18,7 +18,4 @@ export class LoginPage extends BasePage {
     static get loginButton(){
         return cy.get("#loginButton");
     }
-    static get userProfileMenuButton() {
-        return cy.get("button[aria-label='Go to user profile']");
-    }
 }

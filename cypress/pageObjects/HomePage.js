@@ -18,4 +18,7 @@ export class HomePage extends BasePage {
   static get loginButton() {
     return cy.get("#navbarLoginButton");
   }
+  static get userProfileMenuButton() {
+    return cy.get("button[aria-label='Go to user profile']");
+  }
 }
